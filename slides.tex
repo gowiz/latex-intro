@@ -1,0 +1,130 @@
+%\documentclass[13pt,handout]{beamer}
+\documentclass[13pt]{beamer}
+%\usetheme{Boadilla}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage[dutch]{babel}
+\usepackage{dot2texi}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Display number like Don
+\newdimen\dx
+\def\dm#1#2{\dx=1em\relax\def\rt{#1}{\Dm#2\dm}}
+\def\Dm#1{\ifx#1\dm\else\fontsize\dx\dx\selectfont#1\dx=\rt\dx\expandafter\Dm\fi}
+
+% Set margins first argument left, second argument right
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist%
+
+\title{\LaTeX introductie}
+\subtitle{Typesetting voor leerkrachten secundair onderwijs}
+\author{}
+\institute{}
+\date{}%\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage%
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\begin{frame}
+  \frametitle{Latex}
+  \begin{itemize}
+  \item Typesetting systeem: genereren van documenten
+  \item Nadruk op wetenschappelijke en technische documenten
+  \item Schrijver kan zich concentreren op de inhoud
+  \item Schrijver kan de lay-out negeren
+  \item Verplicht gebruik bij wetenschappelijke publicaties
+  \item Beschikbaar op alle systemen: Mac, Linux, Windows, Web, ...
+  \item Gratis software en code beschikbaar
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{WYSIWYG vs SYSIWYM}
+  \begin{columns}[T] % align columns
+    \begin{column}{.48\textwidth}
+      WYSIWYG
+      \begin{itemize}
+      \item {\scriptsize What You See Is What You} Get
+      \item Tekstverwerkers
+      \item Vb: Microsoft Word, Google Docs
+      \item Gebruiksvriendelijk
+      \item Veel manueel 'prutsen'
+      \item Bestandsformaat is gesloten
+      \end{itemize}
+    \end{column}
+    \hfill
+    \begin{column}{.48\textwidth}
+      WYSIWYM
+      \begin{itemize}
+      \item {\scriptsize What You See Is What You} Mean
+      \item Markup talen
+      \item Vb: HTML, Markdown, \TeX, \LaTeX
+      \item Steile leercurve
+      \item Automatische bladindeling
+      \item Brondocument is een tekstbestand
+      \end{itemize}
+    \end{column}%
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Geschiedenis van \LaTeX}
+  \begin{itemize}
+  \item 1436: Gutenberg vindt de boekdrukkunst uit
+  \item 1968: Eerste versie van TAOCP, typeset m.b.v. loodzetten
+  \item 1976: Tweede versie van TAOCP, typeset m.b.v. fototypesetting
+  \item 1978: Knuth neemt één jaar sabbatical om \TeX{} te schrijven
+  \item 1980: LaTeX (Leslie Lamport)
+  \item 1994: LaTeX 2e (Frank Mittelbach, Chris Rowley, Rainer Schöpf)
+  \item 202?: LaTeX 3e
+  \end{itemize}
+
+  Versie van \TeX: \dm{0.95}{3.14159265}\\%358979323846264338327950288419716939937510
+  En de versie wordt ooit gelijk aan $\pi$
+  \begin{itemize}
+  \item Niet $t\to+\infty$
+  \item Foutloos, stabiel
+  \end{itemize}
+\end{frame}
+
+\appendix
+\section{Editor/Engine/Format/Distribution}
+
+\begin{frame}
+  \frametitle{Editor/Engine/Format/Distribution}
+  \begin{description}
+  \item[Editor] Bewerking van \texttt{.tex} bestanden.
+  \item[Engine] Programma die het eigenlijke werk doet, bv. \TeX, pdfTeX, LuaTeX.
+  \item[Format] Set macro's die het werken met \TeX vereenvoudigen, bv. \LaTeX, ConTeXt, plainTeX. Dit kunnen ook een set macro's zijn die aangeleverd worden door publisher of onderwijsinstelling.
+  \item[Distribution] Reeks extra packages, bijvoorbeeld om met kleur, hyperlinks, chemiesymbolen, enzoverder te werken worden samengepakt, bv. \TeX Live, MiKTeX.
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Einde}
+  \vfill
+  \begin{center}
+    \huge Vragen?\\
+    \Huge Bedankt!
+  \end{center}
+  \vfill
+\end{frame}
+
+\end{document}
+
