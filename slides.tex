@@ -11,9 +11,37 @@
 \usepackage{multicol}
 \usepackage[dutch]{babel}
 \usepackage{dot2texi}
-
+\usepackage{hyperref}
+\usepackage{xpatch}
+\usepackage{xcolor}
+\usepackage{realboxes}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+
+\usepackage{listings}
+\lstset{
+  language=[LaTeX]TeX,
+  frame=single,
+  framerule=0pt,
+  backgroundcolor=\color{lightgray},
+  basicstyle=\small
+}
+\makeatletter
+\xpretocmd\lstinline{\Colorbox{lightgray}\bgroup\appto\lst@DeInit{\egroup}}{}{}
+\makeatother
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,calc}
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+
+\newcommand*{\AddNote}[4]{%
+    \begin{tikzpicture}[overlay, remember picture]
+        \draw [decoration={brace,amplitude=0.3em},decorate,ultra thick,red]
+            ($(#3)!([yshift=1.5ex]#1)!($(#3)-(0,1)$)$) --
+            ($(#3)!(#2)!($(#3)-(0,1)$)$)
+                node [align=center, text width=2.5cm, pos=0.5, anchor=west] {\tiny #4};
+    \end{tikzpicture}
+}%
 
 % Display number like Don
 \newdimen\dx
@@ -78,6 +106,11 @@
       \item Steile leercurve
       \item Automatische bladindeling
       \item Brondocument is een tekstbestand
+        \begin{itemize}
+        \item Altijd leesbaar
+        \item Versie controle
+        \item Andere tools
+        \end{itemize}
       \end{itemize}
     \end{column}%
   \end{columns}
@@ -126,5 +159,52 @@
   \vfill
 \end{frame}
 
-\end{document}
+\begin{frame}[fragile]
+  \frametitle{\LaTeX\ via het web}
+  Overleaf: Online \LaTeX\ editor
+  \begin{itemize}
+  \item Link: \url{https://www.overleaf}.
+  \item Inloggen, bijvoorbeeld met gmail account van school.
+  \item New project $\to$ Blank project.
+  \item Indeling: Bestanden, Input, Output.
+  \end{itemize}
+  \begin{lstlisting}[mathescape]
+    \documentclass{article}         $\tikzmark{lst-begin-preamble}$
 
+    \usepackage[utf8]{inputenc}
+    \usepackage[dutch]{babel}
+                                    $\tikzmark{lst-end-preamble}$
+    \begin{document}                $\tikzmark{lst-begin-document}$
+
+    Mijn eerste stappen in \LaTeX.
+
+    \end{document}                  $\tikzmark{lst-end-document}$
+  \end{lstlisting}
+  \AddNote{lst-begin-preamble}{lst-end-preamble}{lst-begin-preamble}{Preamble}
+  \AddNote{lst-begin-document}{lst-end-document}{lst-begin-document}{Document}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Preamble: Documentclass}
+  \begin{itemize}
+  \item Soort document, bv. \lstinline{article}, \lstinline{letter}, \lstinline{book}.
+  \item Opties:
+    \begin{itemize}
+    \item Grootte van het lettertype, bv. \lstinline{12pt}.
+    \item Soort papier, bv. \lstinline{a4paper}.
+    \item Extra opties, bv. \lstinline{twoside}.
+    \end{itemize}
+  \end{itemize}
+  Voorbeelden:
+  \begin{lstlisting}
+    \documentclass[12pt,a4paper,twoside]{article}
+  \end{lstlisting}
+  \begin{lstlisting}
+    \documentclass[a4paper]{examen}
+  \end{lstlisting}
+  \begin{lstlisting}
+    \documentclass[a3paper]{poster}
+  \end{lstlisting}
+\end{frame}
+
+\end{document}
