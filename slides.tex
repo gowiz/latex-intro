@@ -168,10 +168,28 @@
   \item[typeset me] Bv. de letter \texttt{a}
   \item[control sequences]\mbox\
     \begin{description}
-    \item[control words] Bv. \verb#\bf# om de text in het vet te plaatsen, of \verb#\frac{a}{b}# om een breuk $\frac{a}{b}$ te maken.
-    \item[control symbols] Een backslash gevolgd door een enkel symbool, bv. \verb#\$# om \$ te typesetten.
+    \item[control words] Bv. \lstinline#\bf# om de text in het vet te plaatsen, of \lstinline#\frac{a}{b}# om een breuk $\frac{a}{b}$ te maken. Kunnen parameters hebben.
+    \item[control symbols] Een backslash gevolgd door een enkel symbool, bv. \lstinline#\$# om \$ te typesetten.
     \end{description}
   \end{description}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Witruimte}
+  Spatie
+  \begin{itemize}
+  \item Eén of meerdere spaties tellen als één spatie.
+  \item Ruimte tussen woorden afhankelijk.
+  \item Sommige spaties worden een nieuwe lijn.
+  \item Een nieuwe lijn kan eenvoudig vermeden worden met \~\ , bv. \lstinline#Figuur~1#
+  \end{itemize}
+
+  Nieuwe lijn
+  \begin{itemize}
+  \item Een nieuwe lijn in de input geldt als een spatie.
+  \item Twee of meer nieuwe lijnen in de input gelden als het einde van een paragraaf.
+  \item Een nieuwe lijn 'forceren' kan met \lstinline#\newline#
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
