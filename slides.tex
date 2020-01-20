@@ -150,26 +150,30 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Commands}
+  \frametitle{Commando's}
   \begin{center}
-    \begin{tikzpicture}
-    \begin{dot2tex}[dot,tikz]
+    \begin{dot2tex}[dot]
       digraph G {
-        1 -> 2;
+        graph [pad=0,ranksep=0,nodesep=0];
+        commando -> typeset_me;
+        commando -> witruimte;
+        commando -> control;
+        control -> word;
+        control -> symbol;
+        typeset_me [label="typeset me"];
       }
     \end{dot2tex}
-  \end{tikzpicture}
   \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Commands}
   \begin{description}
-  \item[typeset me] Bv. de letter \texttt{a}
+  \item[typeset me] Bv. de letter \lstinline|a|
   \item[control sequences]\mbox\
     \begin{description}
-    \item[control words] Bv. \lstinline#\bf# om de text in het vet te plaatsen, of \lstinline#\frac{a}{b}# om een breuk $\frac{a}{b}$ te maken. Kunnen parameters hebben.
-    \item[control symbols] Een backslash gevolgd door een enkel symbool, bv. \lstinline#\$# om \$ te typesetten.
+    \item[control words] Bv. \lstinline|\bf| om de tekst in het vet te plaatsen, of \lstinline|\frac{a}{b}| om een breuk $\frac{a}{b}$ te maken. Kunnen parameters hebben.
+    \item[control symbols] Een backslash gevolgd door een enkel symbool, bv. \lstinline|\$| om \$ te zetten.
     \end{description}
   \end{description}
 \end{frame}
@@ -178,17 +182,17 @@
   \frametitle{Witruimte}
   Spatie
   \begin{itemize}
-  \item Eén of meerdere spaties tellen als één spatie.
+  \item Een of meerdere spaties tellen als één spatie.
   \item Ruimte tussen woorden afhankelijk.
   \item Sommige spaties worden een nieuwe lijn.
-  \item Een nieuwe lijn kan eenvoudig vermeden worden met \~\ , bv. \lstinline#Figuur~1#
+  \item Een nieuwe lijn kan eenvoudig vermeden worden met \~\ , bv. \lstinline|Figuur~1|
   \end{itemize}
 
   Nieuwe lijn
   \begin{itemize}
   \item Een nieuwe lijn in de input geldt als een spatie.
   \item Twee of meer nieuwe lijnen in de input gelden als het einde van een paragraaf.
-  \item Een nieuwe lijn 'forceren' kan met \lstinline#\newline#
+  \item Een nieuwe lijn 'forceren' kan met \lstinline|\newline|
   \end{itemize}
 \end{frame}
 
