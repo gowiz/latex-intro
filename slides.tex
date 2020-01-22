@@ -122,9 +122,9 @@
   \item 1436: Gutenberg vindt de boekdrukkunst uit
   \item 1968: Eerste versie van TAOCP, typeset m.b.v. loodzetten
   \item 1976: Tweede versie van TAOCP, typeset m.b.v. fototypesetting
-  \item 1978: Knuth neemt één jaar sabbatical om \TeX{} te schrijven
-  \item 1980: LaTeX (Leslie Lamport)
-  \item 1994: LaTeX 2e (Frank Mittelbach, Chris Rowley, Rainer Schöpf)
+  \item 1978: Knuth neemt één jaar sabbatical om \TeX\ te schrijven
+  \item 1980: \LaTeX\ (Leslie Lamport)
+  \item 1994: \LaTeXe\ (Frank Mittelbach, Chris Rowley, Rainer Schöpf)
   \item 202?: LaTeX 3e
   \end{itemize}
 
@@ -219,6 +219,7 @@
     \documentclass{article}         $\tikzmark{lst-begin-preamble}$
 
     \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
     \usepackage[dutch]{babel}
                                     $\tikzmark{lst-end-preamble}$
     \begin{document}                $\tikzmark{lst-begin-document}$
@@ -252,6 +253,30 @@
   \begin{lstlisting}
     \documentclass[a3paper]{poster}
   \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Preamble: Packages}
+  \begin{itemize}
+  \item Voegt stukje functionaliteit toe.
+  \item Moeten toegevoegd worden in preamble, voor eerste gebruik.
+  \item Hebben vorm
+    \begin{center}
+      \lstinline|\usepackage[opties]{naam}|
+    \end{center}
+    met
+    \begin{description}
+    \item[naam] De naam van de package
+    \item[opties] Optioneel, een met komma's gescheiden lijst van opties
+    \end{description}
+  \item Voorbeelden
+    \begin{itemize}
+    \item \lstinline|\usepackage[utf8]{inputenc}|\\
+      Zet de juiste encoding.
+    \item \lstinline|\usepackage[dutch]{babel}|\\
+      Laat weten dat je Nederlands gebruikt.
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \end{document}
