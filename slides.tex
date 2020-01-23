@@ -235,14 +235,22 @@
 \begin{frame}[fragile]
   \frametitle{Preamble: Documentclass}
   \begin{itemize}
-  \item Soort document, bv. \lstinline{article}, \lstinline{letter}, \lstinline{book}.
-  \item Opties:
+  \item Kiest het soort document.
+  \item Eerste lijn van het \texttt{.tex} bestand, heeft de vorm
+    \begin{center}
+      \lstinline|\documentclass[opties]{soort}|
+    \end{center}
+    met
+    \begin{description}
+  \item[soort] Soort document, bv. \lstinline{article}, \lstinline{letter}, \lstinline{book}.
+  \item[opties]
     \begin{itemize}
     \item Grootte van het lettertype, bv. \lstinline{12pt}.
     \item Soort papier, bv. \lstinline{a4paper}.
     \item Extra opties, bv. \lstinline{twoside}.
     \end{itemize}
   \end{itemize}
+\end{description}
   Voorbeelden:
   \begin{lstlisting}
     \documentclass[12pt,a4paper,twoside]{article}
