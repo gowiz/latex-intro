@@ -242,28 +242,28 @@
     \end{center}
     met
     \begin{description}
-  \item[soort] Soort document, bv. \lstinline{article}, \lstinline{letter}, \lstinline{book}.
-  \item[opties]
-    \begin{itemize}
-    \item Grootte van het lettertype, bv. \lstinline{12pt}.
-    \item Soort papier, bv. \lstinline{a4paper}.
-    \item Extra opties, bv. \lstinline{twoside}.
-    \end{itemize}
+    \item[soort] Soort document, bv. \lstinline{article}, \lstinline{letter}, \lstinline{book}.
+    \item[opties] Extra opties voor het document
+      \begin{itemize}
+      \item Grootte van het lettertype, bv. \lstinline{12pt}.
+      \item Soort papier, bv. \lstinline{a4paper}.
+      \item Extra opties, bv. \lstinline{twoside}.
+      \end{itemize}
+    \end{description}
   \end{itemize}
-\end{description}
   Voorbeelden:
-  \begin{lstlisting}
+\begin{lstlisting}
     \documentclass[12pt,a4paper,twoside]{article}
-  \end{lstlisting}
-  \begin{lstlisting}
+\end{lstlisting}
+\begin{lstlisting}
     \documentclass[a4paper]{examen}
-  \end{lstlisting}
-  \begin{lstlisting}
+\end{lstlisting}
+\begin{lstlisting}
     \documentclass[a3paper]{poster}
-  \end{lstlisting}
+\end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]
+\begin{frame}[fragile=singleslide]
   \frametitle{Preamble: Packages}
   \begin{itemize}
   \item Voegt stukje functionaliteit toe.
@@ -285,6 +285,32 @@
       Laat weten dat je Nederlands gebruikt.
     \end{itemize}
   \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Preamble: Titel, auteur en datum}
+
+\begin{lstlisting}
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[dutch]{babel}
+
+\title{Onze cursus}
+\author{
+  Pieter Pareit
+  \thanks{En zijn behulpzame cursisten!}
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Hier schrijven we dan de rest van ons cursus!
+
+\end{document}
+\end{lstlisting}
 \end{frame}
 
 \end{document}
