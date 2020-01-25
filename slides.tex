@@ -289,7 +289,6 @@
 
 \begin{frame}[fragile]
   \frametitle{Preamble: Titel, auteur en datum}
-
 \begin{lstlisting}
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
@@ -308,6 +307,31 @@
 \maketitle
 
 Hier schrijven we dan de rest van ons cursus!
+
+\end{document}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Paragrafen, witruimte, nieuwe lijnen}
+\begin{lstlisting}[firstline=6]
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[dutch]{babel}
+
+\begin{document}
+
+Paragrafen beginnen we nadat we een lege lijn
+hebben in onze source.
+Een nieuwe lijn
+begint nog geen
+nieuwe paragraaf. Een exces    aan    spaties
+   wordt    ook genegeerd   .
+
+Een lijn leeg laten dus wel.
+Met behulp van \\twee backslashen\\
+of \newline krijgen we wel een nieuwe lijn.
 
 \end{document}
 \end{lstlisting}
